@@ -39,56 +39,56 @@ const data = {
     {
       title: "Dashboard",
       url: "/",
-      icon: <LayoutDashboardIcon />,
+      icon: <LayoutDashboardIcon className="size-5" />,
     },
     {
       title: "Moderation Artists",
       url: "/artists",
-      icon: <User />,
+      icon: <User className="size-5" />,
     },
     {
       title: "Moderation Songs",
       url: "/songs",
-      icon: <Music4 />,
+      icon: <Music4 className="size-5" />,
     },
     {
       title: "Moderation Albums",
       url: "/albums",
-      icon: <DiscAlbum />,
+      icon: <DiscAlbum className="size-5" />,
     },
     {
       title: "Statistics",
       url: "/statistics",
-      icon: <ChartColumnBig />,
+      icon: <ChartColumnBig className="size-5" />,
     },
     {
       title: "Playlists",
       url: "/playlists",
-      icon: <ListMusicIcon />,
+      icon: <ListMusicIcon className="size-5" />,
     },
     {
       title: "Users",
       url: "/users",
-      icon: <UsersIcon />,
+      icon: <UsersIcon className="size-5" />,
     },
   ],
   navSecondary: [
     {
       title: "Settings",
       url: "#",
-      icon: <Settings2Icon />,
+      icon: <Settings2Icon className="size-5" />,
     },
   ],
   documents: [
     {
       name: "Data Applications",
       url: "#",
-      icon: <DatabaseIcon />,
+      icon: <DatabaseIcon className="size-5" />,
     },
     {
       name: "Report Statistics",
       url: "#",
-      icon: <FileChartColumnIcon />,
+      icon: <FileChartColumnIcon className="size-5" />,
     },
   ],
 };
@@ -105,7 +105,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <a href="#">
                 <CommandIcon className="size-5!" />
-                <span className="text-base font-semibold">Glenify Dashboard</span>
+                <span className="text-base font-semibold">
+                  Glenify Dashboard
+                </span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
