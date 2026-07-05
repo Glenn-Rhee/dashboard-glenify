@@ -33,7 +33,6 @@ export function NavDocuments({
 }: {
   items: {
     name: string;
-    url: string;
     icon: React.ReactNode;
   }[];
 }) {
@@ -45,8 +44,8 @@ export function NavDocuments({
       <SidebarMenu>
         {items.map((item) => (
           <SidebarMenuItem key={item.name}>
-            <SidebarMenuButton asChild>
-              <a href={item.url}>
+            <SidebarMenuButton className="cursor-pointer" asChild>
+              <a>
                 {item.icon}
                 <span>{item.name}</span>
               </a>

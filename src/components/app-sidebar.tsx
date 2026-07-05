@@ -71,23 +71,25 @@ const data = {
       url: "/users",
       icon: <UsersIcon className="size-5" />,
     },
+    {
+      title: "Transactions",
+      url: "/transactions",
+      icon: <FileChartColumnIcon className="size-5" />,
+    },
   ],
   navSecondary: [
     {
       title: "Settings",
-      url: "#",
       icon: <Settings2Icon className="size-5" />,
     },
   ],
   documents: [
     {
       name: "Data Applications",
-      url: "#",
       icon: <DatabaseIcon className="size-5" />,
     },
     {
       name: "Report Statistics",
-      url: "#",
       icon: <FileChartColumnIcon className="size-5" />,
     },
   ],
