@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import LineChart from "./pages/dashboard/LineChart";
 import PieChart from "./pages/dashboard/PieChart";
+import BarChart from "./pages/dashboard/BarChart";
 
 export const description = "An interactive area chart";
 
@@ -14,7 +15,9 @@ export function ChartAreaInteractive() {
         <Card className="@container/card">
           <PieChart />
         </Card>
-        <Card className="@container/card">cihuy</Card>
+        <Card className="@container/card">
+          <BarChart />
+        </Card>
       </div>
     </>
   );
