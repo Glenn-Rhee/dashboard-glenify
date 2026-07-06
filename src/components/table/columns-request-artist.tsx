@@ -35,7 +35,7 @@ import z from "zod";
 import { ColumnDef } from "@tanstack/react-table";
 
 export const schemaTableReqArtist = z.object({
-  id: z.number(),
+  id: z.string(),
   userName: z.string(),
   requestDate: z.iso.datetime(),
   status: z.enum(["Pending", "Approved", "Rejected"]),
