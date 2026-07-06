@@ -59,7 +59,7 @@ export default function PieChart() {
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-62.5 [&_.recharts-text]:fill-background"
+          className="mx-auto aspect-square max-h-100 [&_.recharts-text]:fill-background"
         >
           <PieChartUI>
             <ChartTooltip
@@ -70,7 +70,8 @@ export default function PieChart() {
                 dataKey="browser"
                 className="fill-background"
                 stroke="none"
-                fontSize={12}
+                fontSize={18}
+                fontWeight={700}
                 formatter={(value) =>
                   chartConfig[value as keyof typeof chartConfig]?.label
                 }
