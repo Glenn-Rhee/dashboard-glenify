@@ -81,7 +81,7 @@ export default function BarChart() {
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent hideLabel />}
+              content={<ChartTooltipContent />}
             />
             <Bar
               dataKey="totalStreams"

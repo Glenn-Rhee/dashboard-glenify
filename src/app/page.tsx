@@ -1,7 +1,9 @@
 import { ChartAreaInteractive } from "@/components/chart-area-interactive";
 import { SectionCards } from "@/components/section-cards";
 import data from "./data.json";
-import { DataTable } from "@/components/data-table";
+import { TableRequestArtist } from "@/components/TableRequestArtist";
+import z from "zod";
+import { schemaTableReqArtist } from "@/components/table/columns-request-artist";
 
 export default function Home() {
   return (
@@ -12,7 +14,9 @@ export default function Home() {
           <div className="px-4 lg:px-6">
             <ChartAreaInteractive />
           </div>
-          <DataTable data={data} />
+          <div className="px-4 lg:px-6">
+            <TableRequestArtist data={data as z.infer<typeof schemaTableReqArtist>[]} />
+          </div>
         </div>
       </div>
     </div>
