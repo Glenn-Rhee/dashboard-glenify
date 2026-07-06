@@ -169,7 +169,14 @@ export default function LineChart() {
                 ? "30 days"
                 : "7 days"}
           </span>
-          <span className="@[540px]/card:hidden">Last 3 months</span>
+          <span className="@[540px]/card:hidden">
+            Last{" "}
+            {timeRange === "90d"
+              ? "3 months"
+              : timeRange === "30d"
+                ? "30 days"
+                : "7 days"}
+          </span>
         </CardDescription>
         <CardAction>
           <ToggleGroup
