@@ -1,3 +1,7 @@
+import Container from "@/components/Container";
+
 export default function ArtistsPage() {
-    return <h1>Artists Page</h1>;
+    return <Container>
+        cihu
+    </Container>
 }

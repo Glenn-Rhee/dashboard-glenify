@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <Container>
       <SectionCards />
-      <div className="px-4 lg:px-6">
+      <div>
         <ChartAreaInteractive />
       </div>
-      <div className="px-4 lg:px-6">
+      <div>
         <TableRequestArtist
           data={data as z.infer<typeof schemaTableReqArtist>[]}
         />
