@@ -133,7 +133,7 @@ export default function TableAritist({
             <TableBody className="**:data-[slot=table-cell]:first:w-8">
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
-                  <ContextMenuArtist key={row.original.id} idArtist={row.original.id}>
+                  <ContextMenuArtist key={row.original.id} item={row.original}>
                     <TableRow
                       key={row.original.id}
                       data-state={row.getIsSelected() && "selected"}

@@ -56,7 +56,7 @@ export const columnsArtist: ColumnDef<z.infer<typeof schemaTableArtist>>[] = [
   {
     id: "action",
     cell: ({ row }) => (
-      <DropdownmenuArtist idArtist={row.original.id}>
+      <DropdownmenuArtist item={row.original}>
         <button className="opacity-0 group-hover/row-artist:opacity-100">
           <MoreVertical className="size-4" />
         </button>
