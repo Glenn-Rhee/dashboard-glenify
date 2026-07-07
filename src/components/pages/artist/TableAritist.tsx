@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -47,6 +48,7 @@ import {
   ChevronRightIcon,
   ChevronsLeftIcon,
   ChevronsRightIcon,
+  SearchIcon,
 } from "lucide-react";
 import React from "react";
 import z from "zod";
@@ -95,13 +97,21 @@ export default function TableAritist({
   });
 
   return (
-    <Card className="@container/card">
+    <Card className="@container/card mt-3">
       <CardHeader className="items-center pb-0 justify-between flex">
         <div className="flex flex-col gap-1">
           <CardTitle>Artist list</CardTitle>
           <CardDescription>
             All registered artists and their current status
           </CardDescription>
+        </div>
+        <div className="relative flex items-center">
+          <SearchIcon className="absolute left-2.5 h-4 w-4 text-muted-foreground" />
+          <Input
+            type="search"
+            placeholder="Search artist..."
+            className="pl-8 w-64"
+          />
         </div>
       </CardHeader>
       <CardContent>
