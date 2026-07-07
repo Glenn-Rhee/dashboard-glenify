@@ -4,7 +4,7 @@
     "artistName": "Taylor Swift",
     "bio": "Singer-songwriter known for narrative storytelling across pop and country genres.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Taylor Swift",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-01-15T08:30:00.000Z"
   },
   {
@@ -12,7 +12,7 @@
     "artistName": "Ariana Grande",
     "bio": "Pop artist with a signature whistle register, blending R&B influences into mainstream hits.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Ariana Grande",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-02-03T10:15:00.000Z"
   },
   {
@@ -20,7 +20,7 @@
     "artistName": "The Weeknd",
     "bio": "Known for atmospheric production and falsetto vocals across R&B and synth-pop.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=The Weeknd",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-02-20T14:45:00.000Z"
   },
   {
@@ -28,7 +28,7 @@
     "artistName": "Billie Eilish",
     "bio": "Alternative pop artist recognized for minimalist production and introspective lyrics.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Billie Eilish",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-03-05T09:00:00.000Z"
   },
   {
@@ -36,7 +36,7 @@
     "artistName": "Drake",
     "bio": "Rapper and singer blending hip-hop, R&B, and melodic hooks.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Drake",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-03-18T16:20:00.000Z"
   },
   {
@@ -44,7 +44,7 @@
     "artistName": "Dylan Reeves",
     "bio": "Independent singer exploring lo-fi bedroom pop soundscapes.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Dylan Reeves",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-04-02T11:10:00.000Z"
   },
   {
@@ -52,7 +52,7 @@
     "artistName": "Mira Santoso",
     "bio": "Indonesian singer-songwriter combining traditional instruments with modern pop arrangements.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Mira Santoso",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-04-10T07:45:00.000Z"
   },
   {
@@ -60,7 +60,7 @@
     "artistName": "Kevin Alderman",
     "bio": "Acoustic folk performer with a focus on storytelling ballads.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Kevin Alderman",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-04-22T13:30:00.000Z"
   },
   {
@@ -68,7 +68,7 @@
     "artistName": "Nadia Putri",
     "bio": "Rising R&B vocalist known for soulful live performances.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Nadia Putri",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-05-01T09:50:00.000Z"
   },
   {
@@ -76,7 +76,7 @@
     "artistName": "Marcus Lee",
     "bio": "Electronic music producer specializing in ambient and downtempo tracks.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Marcus Lee",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-05-14T15:05:00.000Z"
   },
   {
@@ -84,7 +84,7 @@
     "artistName": "Sophie Tanaka",
     "bio": "J-pop inspired vocalist with a growing international following.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Sophie Tanaka",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-05-27T10:40:00.000Z"
   },
   {
@@ -92,7 +92,7 @@
     "artistName": "Rico Fernandez",
     "bio": "Latin trap artist blending reggaeton rhythms with modern hip-hop production.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Rico Fernandez",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-06-03T08:25:00.000Z"
   },
   {
@@ -100,7 +100,7 @@
     "artistName": "Elena Kovac",
     "bio": "Classically trained pianist turned indie pop composer.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Elena Kovac",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-06-11T12:15:00.000Z"
   },
   {
@@ -108,7 +108,7 @@
     "artistName": "Jaden Cole",
     "bio": "Alternative rock musician with influences from 90s grunge revival.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Jaden Cole",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-06-19T09:35:00.000Z"
   },
   {
@@ -116,7 +116,7 @@
     "artistName": "Amara Whitfield",
     "bio": "Neo-soul singer known for jazz-influenced vocal improvisation.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Amara Whitfield",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-06-28T14:00:00.000Z"
   },
   {
@@ -124,7 +124,7 @@
     "artistName": "Bayu Pratama",
     "bio": "Indie folk artist writing songs about nature and everyday life in Java.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Bayu Pratama",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-07-05T16:50:00.000Z"
   },
   {
@@ -132,7 +132,7 @@
     "artistName": "Chloe Martin",
     "bio": "Singer-songwriter focused on stripped-down piano ballads.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Chloe Martin",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-07-15T11:20:00.000Z"
   },
   {
@@ -140,7 +140,7 @@
     "artistName": "Ravi Shankar Jr.",
     "bio": "Fusion artist blending classical Indian instrumentation with electronic beats.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Ravi Shankar Jr.",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-07-24T09:10:00.000Z"
   },
   {
@@ -148,7 +148,7 @@
     "artistName": "Luna Bright",
     "bio": "Dream-pop vocalist with ethereal production and layered harmonies.",
     "verified": true,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Luna Bright",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-08-02T13:45:00.000Z"
   },
   {
@@ -156,7 +156,7 @@
     "artistName": "Fajar Nugroho",
     "bio": "Hip-hop artist addressing social issues through sharp lyricism.",
     "verified": false,
-    "avatarUrl": "https://api.dicebear.com/9.x/initials/svg?seed=Fajar Nugroho",
+    "avatarUrl": "/dummy-prof.jpg",
     "createdAt": "2025-08-11T10:30:00.000Z"
   }
 ]

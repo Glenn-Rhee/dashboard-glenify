@@ -222,7 +222,6 @@ export const columns: ColumnDef<z.infer<typeof schemaTableReqArtist>>[] = [
     header: "No",
     cell: ({ row }) => <span className="block">{row.index + 1}</span>,
   },
-
   {
     accessorKey: "userName",
     header: "User Name",
