@@ -3,6 +3,7 @@ import Image from "next/image";
 import z from "zod";
 import { Badge } from "../ui/badge";
 import { MoreVertical } from "lucide-react";
+import DropdownmenuArtist from "../dropwdownmenu/dropdown-menu-artist";
 
 export const schemaTableArtist = z.object({
   id: z.string(),
@@ -55,9 +56,11 @@ export const columnsArtist: ColumnDef<z.infer<typeof schemaTableArtist>>[] = [
   {
     id: "action",
     cell: ({ row }) => (
-      <button className="opacity-0 group-hover/row-artist:opacity-100">
-        <MoreVertical className="size-4" />
-      </button>
+      <DropdownmenuArtist idArtist={row.original.id}>
+        <button className="opacity-0 group-hover/row-artist:opacity-100">
+          <MoreVertical className="size-4" />
+        </button>
+      </DropdownmenuArtist>
     ),
   },
 ];
