@@ -53,7 +53,7 @@ import {
 import React from "react";
 import z from "zod";
 
-export default function TableAritist({
+export default function TableArtist({
   data: initialData,
 }: {
   data: z.infer<typeof schemaTableArtist>[];

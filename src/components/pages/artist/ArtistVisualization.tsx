@@ -1,10 +1,7 @@
+import KPICard, { CardKPI } from "@/components/KPICard";
 import { Card } from "@/components/ui/card";
-import PieChart from "./pages/dashboard/PieChart";
-import BarChart from "./pages/dashboard/BarChart";
-import LineChart from "./visualization/LineChart";
-import { ChartConfig } from "./ui/chart";
-
-export const description = "An interactive area chart";
+import { ChartConfig } from "@/components/ui/chart";
+import LineChart from "@/components/visualization/LineChart";
 
 const chartData = [
   { date: "2024-04-01", value: 12 },
@@ -107,25 +104,41 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function ChartAreaInteractive() {
+const dataCard: CardKPI[] = [
+  {
+    title: "Total Artist",
+    value: 1200,
+    convertTo: "number",
+  },
+  {
+    title: "Verified Artist",
+    value: 800,
+    convertTo: "number",
+  },
+  {
+    title: "Avg Streams",
+    value: 45678,
+    convertTo: "number",
+  },
+  {
+    title: "New This Month",
+    value: 450,
+    convertTo: "number",
+  },
+];
+
+export default function ArtistVisualization() {
   return (
-    <>
-      <Card className="@container/card">
+    <div className="mt-3">
+      <KPICard cards={dataCard} />
+      <Card className="@container/card mt-6">
         <LineChart
-          title="Total Revenue"
-          description="Total Revenue for the last"
+          title="Artist Growth"
+          description="New artists joined in the last"
           chartData={chartData}
           chartConfig={chartConfig}
         />
       </Card>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 mt-6 gap-4">
-        <Card className="@container/card">
-          <PieChart />
-        </Card>
-        <Card className="@container/card">
-          <BarChart />
-        </Card>
-      </div>
-    </>
+    </div>
   );
 }
