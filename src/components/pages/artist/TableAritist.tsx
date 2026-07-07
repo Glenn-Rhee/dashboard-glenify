@@ -7,7 +7,6 @@ import {
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardHeader,
@@ -49,7 +48,6 @@ import {
   ChevronsLeftIcon,
   ChevronsRightIcon,
 } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 import z from "zod";
 
@@ -105,9 +103,6 @@ export default function TableAritist({
             All registered artists and their current status
           </CardDescription>
         </div>
-        <CardAction className="text-primary font-semibold hover:underline cursor-pointer">
-          <Link href={"/artist/request"}>View All</Link>
-        </CardAction>
       </CardHeader>
       <CardContent>
         <div className="overflow-hidden rounded-lg border">
@@ -137,7 +132,7 @@ export default function TableAritist({
                     <TableRow
                       key={row.original.id}
                       data-state={row.getIsSelected() && "selected"}
-                      className="relative group/row-artist hover:bg-primary/10 z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
+                      className="relative group/row-artist hover:bg-primary/5 z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
                     >
                       {row.getVisibleCells().map((cell) => (
                         <TableCell key={cell.id}>
@@ -163,7 +158,7 @@ export default function TableAritist({
             </TableBody>
           </Table>
         </div>
-        <div className="flex items-center justify-between px-4">
+        <div className="flex items-center justify-between px-4 mt-4">
           <div className="hidden flex-1 text-sm text-muted-foreground lg:flex">
             {table.getFilteredSelectedRowModel().rows.length} of{" "}
             {table.getFilteredRowModel().rows.length} row(s) selected.

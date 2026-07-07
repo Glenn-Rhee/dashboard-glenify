@@ -43,6 +43,23 @@ const streamsData = [
   { month: "June", totalStreams: 21400 },
 ];
 
+const topSongs = [
+  { id: "s1", title: "Summer Vibes", totalStreams: 458200 },
+  { id: "s2", title: "Midnight Drive", totalStreams: 392100 },
+  { id: "s3", title: "Golden Hour", totalStreams: 287400 },
+  { id: "s4", title: "Neon Lights", totalStreams: 215600 },
+  { id: "s5", title: "Ocean Eyes (Remix)", totalStreams: 198300 },
+];
+
+const topAlbum = {
+  id: "al1",
+  title: "Night Sessions",
+  coverUrl: "/dummy-prof.jpg",
+  trackCount: 12,
+  releaseDate: "2025-11-20",
+  totalStreams: 1250000,
+};
+
 export function ArtistDetail({
   item,
   open,
@@ -152,6 +169,57 @@ export function ArtistDetail({
               </div>
             </div>
           </form>
+
+          <Separator />
+
+          <div className="flex flex-col gap-3">
+            <h3 className="font-medium">Top 5 Songs</h3>
+            <div className="flex flex-col gap-1">
+              {topSongs.map((song, index) => (
+                <div
+                  key={song.id}
+                  className="flex items-center justify-between py-2 px-2 rounded-md hover:bg-muted/50"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-muted-foreground text-xs w-4">
+                      {index + 1}
+                    </span>
+                    <span className="font-medium truncate max-w-40">
+                      {song.title}
+                    </span>
+                  </div>
+                  <span className="text-muted-foreground text-xs">
+                    {song.totalStreams.toLocaleString("id-ID")} streams
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Separator />
+
+          <div className="flex flex-col gap-3">
+            <h3 className="font-medium">Top Performing Album</h3>
+            <div className="flex items-center gap-3 p-3 rounded-md border">
+              <Image
+                width={56}
+                height={56}
+                src={topAlbum.coverUrl}
+                alt={topAlbum.title}
+                className="h-14 w-14 rounded-md object-cover shrink-0"
+              />
+              <div className="flex flex-col gap-0.5 min-w-0">
+                <span className="font-medium truncate">{topAlbum.title}</span>
+                <span className="text-muted-foreground text-xs">
+                  {topAlbum.trackCount} tracks · Released{" "}
+                  {new Date(topAlbum.releaseDate).toLocaleDateString("id-ID")}
+                </span>
+                <span className="text-muted-foreground text-xs">
+                  {topAlbum.totalStreams.toLocaleString("id-ID")} streams
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <DrawerFooter>

@@ -49,7 +49,7 @@ export const columnsArtist: ColumnDef<z.infer<typeof schemaTableArtist>>[] = [
   },
   {
     accessorKey: "createdAt",
-    header: "Created At",
+    header: "Joined At",
     cell: ({ row }) =>
       new Date(row.original.createdAt).toLocaleDateString("id-ID"),
   },
