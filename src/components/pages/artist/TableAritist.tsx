@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import ContextMenuArtist from "@/components/contextmenu/context-menu-artist";
 import {
   columnsArtist,
   schemaTableArtist,
@@ -99,9 +100,9 @@ export default function TableAritist({
     <Card className="@container/card">
       <CardHeader className="items-center pb-0 justify-between flex">
         <div className="flex flex-col gap-1">
-          <CardTitle>Latest Artist Applications</CardTitle>
+          <CardTitle>Artist list</CardTitle>
           <CardDescription>
-            Pending requests from users to become an artist
+            All registered artists and their current status
           </CardDescription>
         </div>
         <CardAction className="text-primary font-semibold hover:underline cursor-pointer">
@@ -132,20 +133,22 @@ export default function TableAritist({
             <TableBody className="**:data-[slot=table-cell]:first:w-8">
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
-                  <TableRow
-                    key={row.original.id}
-                    data-state={row.getIsSelected() && "selected"}
-                    className="relative z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
-                  >
-                    {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </TableCell>
-                    ))}
-                  </TableRow>
+                  <ContextMenuArtist key={row.original.id} idArtist={row.original.id}>
+                    <TableRow
+                      key={row.original.id}
+                      data-state={row.getIsSelected() && "selected"}
+                      className="relative group/row-artist hover:bg-primary/10 z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
+                    >
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  </ContextMenuArtist>
                 ))
               ) : (
                 <TableRow>

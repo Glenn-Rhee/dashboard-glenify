@@ -2,6 +2,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import z from "zod";
 import { Badge } from "../ui/badge";
+import { MoreVertical } from "lucide-react";
 
 export const schemaTableArtist = z.object({
   id: z.string(),
@@ -50,5 +51,13 @@ export const columnsArtist: ColumnDef<z.infer<typeof schemaTableArtist>>[] = [
     header: "Created At",
     cell: ({ row }) =>
       new Date(row.original.createdAt).toLocaleDateString("id-ID"),
+  },
+  {
+    id: "action",
+    cell: ({ row }) => (
+      <button className="opacity-0 group-hover/row-artist:opacity-100">
+        <MoreVertical className="size-4" />
+      </button>
+    ),
   },
 ];
