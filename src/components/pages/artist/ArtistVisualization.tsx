@@ -1,3 +1,4 @@
+import BarchartArtist from "@/components/BarchartArtist";
 import KPICard, { CardKPI } from "@/components/KPICard";
 import { Card } from "@/components/ui/card";
 import { ChartConfig } from "@/components/ui/chart";
@@ -127,6 +128,31 @@ const dataCard: CardKPI[] = [
   },
 ];
 
+const barChartData = [
+  {
+    name: "Taylor Swift",
+    totalStreams: 305,
+    avatar: "/dummy-prof.jpg",
+  },
+  {
+    name: "Ariana Grande",
+    totalStreams: 237,
+    avatar: "/dummy-prof.jpg",
+  },
+  { name: "The Weeknd", totalStreams: 214, avatar: "/dummy-prof.jpg" },
+  {
+    name: "Billie Eilish",
+    totalStreams: 209,
+    avatar: "/dummy-prof.jpg",
+  },
+  { name: "Drake", totalStreams: 186, avatar: "/dummy-prof.jpg" },
+  { name: "Shawn Mendes", totalStreams: 186, avatar: "/dummy-prof.jpg" },
+  { name: "Justin Bieber", totalStreams: 176, avatar: "/dummy-prof.jpg" },
+  { name: "Alan Walker", totalStreams: 166, avatar: "/dummy-prof.jpg" },
+  { name: "For Revenge", totalStreams: 156, avatar: "/dummy-prof.jpg" },
+  { name: "Vierra", totalStreams: 136, avatar: "/dummy-prof.jpg" },
+];
+
 export default function ArtistVisualization() {
   return (
     <div className="mt-3">
@@ -139,6 +165,11 @@ export default function ArtistVisualization() {
           chartConfig={chartConfig}
         />
       </Card>
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <Card className="@container/card mt-6">
+          <BarchartArtist chartData={barChartData} />
+        </Card>
+      </div>
     </div>
   );
 }

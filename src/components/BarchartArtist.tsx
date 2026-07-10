@@ -14,29 +14,7 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
-import { YAxisTick } from "./YAxisTick";
-
-export const description = "A horizontal bar chart";
-
-const chartData = [
-  {
-    name: "Taylor Swift",
-    totalStreams: 305,
-    avatar: "/dummy-prof.jpg",
-  },
-  {
-    name: "Ariana Grande",
-    totalStreams: 237,
-    avatar: "/dummy-prof.jpg",
-  },
-  { name: "The Weeknd", totalStreams: 214, avatar: "/dummy-prof.jpg" },
-  {
-    name: "Billie Eilish",
-    totalStreams: 209,
-    avatar: "/dummy-prof.jpg",
-  },
-  { name: "Drake", totalStreams: 186, avatar: "/dummy-prof.jpg" },
-];
+import { YAxisTick } from "./pages/dashboard/YAxisTick";
 
 const chartConfig = {
   totalStreams: {
@@ -45,11 +23,20 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function BarChart() {
+interface Props {
+  chartData: {
+    name: string;
+    totalStreams: number;
+    avatar: string;
+  }[];
+}
+
+export default function BarchartArtist(props: Props) {
+  const { chartData } = props;
   return (
     <>
       <CardHeader>
-        <CardTitle>Top 5 Artists by Streams</CardTitle>
+        <CardTitle>Top {chartData.length} Artists by Streams</CardTitle>
         <CardDescription>All Time</CardDescription>
       </CardHeader>
       <CardContent>
@@ -79,10 +66,7 @@ export default function BarChart() {
                 />
               )}
             />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent />}
-            />
+            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <Bar
               dataKey="totalStreams"
               fill="var(--color-totalStreams)"

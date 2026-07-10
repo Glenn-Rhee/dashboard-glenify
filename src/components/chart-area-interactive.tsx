@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
 import PieChart from "./pages/dashboard/PieChart";
-import BarChart from "./pages/dashboard/BarChart";
 import LineChart from "./visualization/LineChart";
 import { ChartConfig } from "./ui/chart";
+import BarchartArtist from "./BarchartArtist";
 
 export const description = "An interactive area chart";
 
@@ -107,6 +107,26 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
+const barChartData = [
+  {
+    name: "Taylor Swift",
+    totalStreams: 305,
+    avatar: "/dummy-prof.jpg",
+  },
+  {
+    name: "Ariana Grande",
+    totalStreams: 237,
+    avatar: "/dummy-prof.jpg",
+  },
+  { name: "The Weeknd", totalStreams: 214, avatar: "/dummy-prof.jpg" },
+  {
+    name: "Billie Eilish",
+    totalStreams: 209,
+    avatar: "/dummy-prof.jpg",
+  },
+  { name: "Drake", totalStreams: 186, avatar: "/dummy-prof.jpg" },
+];
+
 export function ChartAreaInteractive() {
   return (
     <>
@@ -123,7 +143,7 @@ export function ChartAreaInteractive() {
           <PieChart />
         </Card>
         <Card className="@container/card">
-          <BarChart />
+          <BarchartArtist chartData={barChartData} />
         </Card>
       </div>
     </>
