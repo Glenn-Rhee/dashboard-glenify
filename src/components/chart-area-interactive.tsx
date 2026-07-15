@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import PieChart from "./pages/dashboard/PieChart";
+import PieChart from "./PieChart";
 import LineChart from "./visualization/LineChart";
 import { ChartConfig } from "./ui/chart";
 import BarchartArtist from "./BarchartArtist";
