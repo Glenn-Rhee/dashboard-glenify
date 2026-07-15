@@ -16,31 +16,31 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
+  { genre: "pop", songs: 342, fill: "var(--color-pop)" },
+  { genre: "hiphop", songs: 268, fill: "var(--color-hiphop)" },
+  { genre: "rnb", songs: 195, fill: "var(--color-rnb)" },
+  { genre: "rock", songs: 147, fill: "var(--color-rock)" },
+  { genre: "other", songs: 98, fill: "var(--color-other)" },
 ];
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  songs: {
+    label: "Songs",
   },
-  chrome: {
-    label: "Chrome",
+  pop: {
+    label: "Pop",
     color: "var(--chart-1)",
   },
-  safari: {
-    label: "Safari",
+  hiphop: {
+    label: "Hip-Hop",
     color: "var(--chart-2)",
   },
-  firefox: {
-    label: "Firefox",
+  rnb: {
+    label: "R&B",
     color: "var(--chart-3)",
   },
-  edge: {
-    label: "Edge",
+  rock: {
+    label: "Rock",
     color: "var(--chart-4)",
   },
   other: {
@@ -63,11 +63,11 @@ export default function PieChart() {
         >
           <PieChartUI>
             <ChartTooltip
-              content={<ChartTooltipContent nameKey="visitors" hideLabel />}
+              content={<ChartTooltipContent nameKey="songs" hideLabel />}
             />
-            <Pie data={chartData} dataKey="visitors">
+            <Pie data={chartData} dataKey="songs">
               <LabelList
-                dataKey="browser"
+                dataKey="genre"
                 className="fill-background"
                 stroke="none"
                 fontSize={18}
