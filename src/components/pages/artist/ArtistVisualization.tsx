@@ -1,5 +1,6 @@
 import BarchartArtist from "@/components/BarchartArtist";
 import KPICard, { CardKPI } from "@/components/KPICard";
+import PieChart from "@/components/PieChart";
 import { Card } from "@/components/ui/card";
 import { ChartConfig } from "@/components/ui/chart";
 import LineChart from "@/components/visualization/LineChart";
@@ -153,6 +154,16 @@ const barChartData = [
   { name: "Vierra", totalStreams: 136, avatar: "/dummy-prof.jpg" },
 ];
 
+const pieChartData = [
+  { genre: "Pop", songs: 342 },
+  { genre: "Hip-Hop", songs: 268 },
+  { genre: "R&B", songs: 195 },
+  { genre: "Rock", songs: 147 },
+  { genre: "Jazz", songs: 76 },
+  { genre: "EDM", songs: 54 },
+  { genre: "Other", songs: 98 },
+];
+
 export default function ArtistVisualization() {
   return (
     <div className="mt-3">
@@ -165,9 +176,12 @@ export default function ArtistVisualization() {
           chartConfig={chartConfig}
         />
       </Card>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card className="@container/card mt-6">
           <BarchartArtist chartData={barChartData} />
+        </Card>
+        <Card className="@container/card mt-6">
+          <PieChart rawData={pieChartData} />
         </Card>
       </div>
     </div>
