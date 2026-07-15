@@ -127,6 +127,17 @@ const barChartData = [
   { name: "Drake", totalStreams: 186, avatar: "/dummy-prof.jpg" },
 ];
 
+// Data mentah dari API/database (jumlah genre bisa berubah-ubah)
+const pieChartData = [
+  { genre: "Pop", songs: 342 },
+  { genre: "Hip-Hop", songs: 268 },
+  { genre: "R&B", songs: 195 },
+  { genre: "Rock", songs: 147 },
+  { genre: "Jazz", songs: 76 },
+  { genre: "EDM", songs: 54 },
+  { genre: "Other", songs: 98 },
+];
+
 export function ChartAreaInteractive() {
   return (
     <>
@@ -140,7 +151,7 @@ export function ChartAreaInteractive() {
       </Card>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 mt-6 gap-4">
         <Card className="@container/card">
-          <PieChart />
+          <PieChart rawData={pieChartData} />
         </Card>
         <Card className="@container/card">
           <BarchartArtist chartData={barChartData} />
