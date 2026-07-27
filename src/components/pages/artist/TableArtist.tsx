@@ -52,6 +52,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import z from "zod";
+import FilterArtist from "./FilterArtist";
 
 export default function TableArtist({
   data: initialData,
@@ -98,20 +99,23 @@ export default function TableArtist({
 
   return (
     <Card className="@container/card mt-3">
-      <CardHeader className="items-center pb-0 justify-between flex">
+      <CardHeader className="md:items-center flex-col gap-y-3 md:flex-row pb-0 justify-between flex">
         <div className="flex flex-col gap-1">
           <CardTitle>Artist list</CardTitle>
           <CardDescription>
             All registered artists and their current status
           </CardDescription>
         </div>
-        <div className="relative flex items-center">
-          <SearchIcon className="absolute left-2.5 h-4 w-4 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search artist..."
-            className="pl-8 w-64"
-          />
+        <div className="flex w-full md:w-fit items-center gap-x-3">
+          <FilterArtist />
+          <div className="relative flex items-center w-full">
+            <SearchIcon className="absolute left-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search artist..."
+              className="pl-8 w-full md:w-64"
+            />
+          </div>
         </div>
       </CardHeader>
       <CardContent>

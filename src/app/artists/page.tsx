@@ -7,7 +7,7 @@ import ArtistVisualization from "@/components/pages/artist/ArtistVisualization";
 export default function ArtistsPage() {
   return (
     <Container>
-      <Tabs defaultValue="artist-statistics">
+      <Tabs defaultValue="artist-list">
         <TabsList variant={"line"}>
           <TabsTrigger value="artist-list">Aritst List</TabsTrigger>
           <TabsTrigger value="artist-statistics">Aritst Statistics</TabsTrigger>
