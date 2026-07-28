@@ -60,7 +60,10 @@ export default function FilterArtist() {
             <div className="flex items-center gap-x-2">
               <Combobox items={itemsRange}>
                 <ComboboxInput className={"w-36"} placeholder="Select range" />
-                <ComboboxContent className="z-[60]">
+                <ComboboxContent
+                  onContextMenu={(e) => e.stopPropagation()}
+                  className="z-60"
+                >
                   <ComboboxEmpty>No items found.</ComboboxEmpty>
                   <ComboboxList>
                     {(item) => (
