@@ -12,6 +12,7 @@ export const schemaTableArtist = z.object({
   verified: z.boolean(),
   avatarUrl: z.string(),
   createdAt: z.iso.datetime(),
+  statusAccount: z.enum(["Active", "Suspend", "Banned"]),
 });
 
 export const columnsArtist: ColumnDef<z.infer<typeof schemaTableArtist>>[] = [
