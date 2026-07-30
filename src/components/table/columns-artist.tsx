@@ -40,7 +40,7 @@ export const columnsArtist: ColumnDef<z.infer<typeof schemaTableArtist>>[] = [
   },
   {
     accessorKey: "verified",
-    header: "Status",
+    header: "Status Verified",
     cell: ({ row }) => (
       <Badge variant={row.original.verified ? "default" : "outline"}>
         {row.original.verified ? "Verified" : "Unverified"}
