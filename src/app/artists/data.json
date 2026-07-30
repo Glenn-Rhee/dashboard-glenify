@@ -5,7 +5,8 @@
     "bio": "Singer-songwriter known for narrative storytelling across pop and country genres.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-01-15T08:30:00.000Z"
+    "createdAt": "2025-01-15T08:30:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_002",
@@ -13,7 +14,8 @@
     "bio": "Pop artist with a signature whistle register, blending R&B influences into mainstream hits.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-02-03T10:15:00.000Z"
+    "createdAt": "2025-02-03T10:15:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_003",
@@ -21,7 +23,8 @@
     "bio": "Known for atmospheric production and falsetto vocals across R&B and synth-pop.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-02-20T14:45:00.000Z"
+    "createdAt": "2025-02-20T14:45:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_004",
@@ -29,7 +32,8 @@
     "bio": "Alternative pop artist recognized for minimalist production and introspective lyrics.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-03-05T09:00:00.000Z"
+    "createdAt": "2025-03-05T09:00:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_005",
@@ -37,7 +41,8 @@
     "bio": "Rapper and singer blending hip-hop, R&B, and melodic hooks.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-03-18T16:20:00.000Z"
+    "createdAt": "2025-03-18T16:20:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_006",
@@ -45,7 +50,8 @@
     "bio": "Independent singer exploring lo-fi bedroom pop soundscapes.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-04-02T11:10:00.000Z"
+    "createdAt": "2025-04-02T11:10:00.000Z",
+    "statusAccount": "Suspend"
   },
   {
     "id": "art_007",
@@ -53,7 +59,8 @@
     "bio": "Indonesian singer-songwriter combining traditional instruments with modern pop arrangements.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-04-10T07:45:00.000Z"
+    "createdAt": "2025-04-10T07:45:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_008",
@@ -61,7 +68,8 @@
     "bio": "Acoustic folk performer with a focus on storytelling ballads.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-04-22T13:30:00.000Z"
+    "createdAt": "2025-04-22T13:30:00.000Z",
+    "statusAccount": "Banned"
   },
   {
     "id": "art_009",
@@ -69,7 +77,8 @@
     "bio": "Rising R&B vocalist known for soulful live performances.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-05-01T09:50:00.000Z"
+    "createdAt": "2025-05-01T09:50:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_010",
@@ -77,7 +86,8 @@
     "bio": "Electronic music producer specializing in ambient and downtempo tracks.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-05-14T15:05:00.000Z"
+    "createdAt": "2025-05-14T15:05:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_011",
@@ -85,7 +95,8 @@
     "bio": "J-pop inspired vocalist with a growing international following.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-05-27T10:40:00.000Z"
+    "createdAt": "2025-05-27T10:40:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_012",
@@ -93,7 +104,8 @@
     "bio": "Latin trap artist blending reggaeton rhythms with modern hip-hop production.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-06-03T08:25:00.000Z"
+    "createdAt": "2025-06-03T08:25:00.000Z",
+    "statusAccount": "Suspend"
   },
   {
     "id": "art_013",
@@ -101,7 +113,8 @@
     "bio": "Classically trained pianist turned indie pop composer.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-06-11T12:15:00.000Z"
+    "createdAt": "2025-06-11T12:15:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_014",
@@ -109,7 +122,8 @@
     "bio": "Alternative rock musician with influences from 90s grunge revival.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-06-19T09:35:00.000Z"
+    "createdAt": "2025-06-19T09:35:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_015",
@@ -117,7 +131,8 @@
     "bio": "Neo-soul singer known for jazz-influenced vocal improvisation.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-06-28T14:00:00.000Z"
+    "createdAt": "2025-06-28T14:00:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_016",
@@ -125,7 +140,8 @@
     "bio": "Indie folk artist writing songs about nature and everyday life in Java.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-07-05T16:50:00.000Z"
+    "createdAt": "2025-07-05T16:50:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_017",
@@ -133,7 +149,8 @@
     "bio": "Singer-songwriter focused on stripped-down piano ballads.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-07-15T11:20:00.000Z"
+    "createdAt": "2025-07-15T11:20:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_018",
@@ -141,7 +158,8 @@
     "bio": "Fusion artist blending classical Indian instrumentation with electronic beats.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-07-24T09:10:00.000Z"
+    "createdAt": "2025-07-24T09:10:00.000Z",
+    "statusAccount": "Banned"
   },
   {
     "id": "art_019",
@@ -149,7 +167,8 @@
     "bio": "Dream-pop vocalist with ethereal production and layered harmonies.",
     "verified": true,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-08-02T13:45:00.000Z"
+    "createdAt": "2025-08-02T13:45:00.000Z",
+    "statusAccount": "Active"
   },
   {
     "id": "art_020",
@@ -157,6 +176,7 @@
     "bio": "Hip-hop artist addressing social issues through sharp lyricism.",
     "verified": false,
     "avatarUrl": "/dummy-prof.jpg",
-    "createdAt": "2025-08-11T10:30:00.000Z"
+    "createdAt": "2025-08-11T10:30:00.000Z",
+    "statusAccount": "Active"
   }
 ]
