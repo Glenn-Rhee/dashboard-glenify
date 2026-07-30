@@ -4,6 +4,7 @@ import z from "zod";
 import { Badge } from "../ui/badge";
 import { MoreVertical } from "lucide-react";
 import DropdownmenuArtist from "../dropwdownmenu/dropdown-menu-artist";
+import { cn } from "@/lib/utils";
 
 export const schemaTableArtist = z.object({
   id: z.string(),
@@ -45,6 +46,28 @@ export const columnsArtist: ColumnDef<z.infer<typeof schemaTableArtist>>[] = [
     cell: ({ row }) => (
       <Badge variant={row.original.verified ? "default" : "outline"}>
         {row.original.verified ? "Verified" : "Unverified"}
+      </Badge>
+    ),
+  },
+  {
+    accessorKey: "statusAccount",
+    header: "Status Account",
+    cell: ({ row }) => (
+      <Badge
+        variant={
+          row.original.statusAccount === "Active"
+            ? "default"
+            : row.original.statusAccount === "Banned"
+              ? "destructive"
+              : "outline"
+        }
+        className={cn(
+          row.original.statusAccount === "Suspend"
+            ? "border-destructive text-destructive font-semibold"
+            : "",
+        )}
+      >
+        {row.original.statusAccount}
       </Badge>
     ),
   },
