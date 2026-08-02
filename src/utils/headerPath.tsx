@@ -26,6 +26,13 @@ export const pathRegister: Map<string, ValueRegister> = new Map([
     },
   ],
   [
+    "/artists/request",
+    {
+      title: "Request Artist",
+      action: null,
+    },
+  ],
+  [
     "/songs",
     {
       title: "Moderation Songs",
