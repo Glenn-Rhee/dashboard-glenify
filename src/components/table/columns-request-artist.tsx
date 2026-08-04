@@ -33,6 +33,7 @@ import { Separator } from "@/components/ui/separator";
 import { InfoIcon, TrendingUpIcon } from "lucide-react";
 import z from "zod";
 import { ColumnDef } from "@tanstack/react-table";
+import Image from "next/image";
 
 export const schemaTableReqArtist = z.object({
   id: z.string(),
@@ -233,12 +234,32 @@ export const columns: ColumnDef<z.infer<typeof schemaTableReqArtist>>[] = [
     cell: ({ row }) => <span className="block">{row.index + 1}</span>,
   },
   {
-    accessorKey: "userName",
-    header: "User Name",
+    accessorKey: "avatarUrl",
+    header: "Avatar",
+    cell: ({ row }) => (
+      <Image
+        src={"/dummy-prof.jpg"}
+        alt={"Image of " + row.original.artistName}
+        width={70}
+        height={70}
+        className="object-cover rounded-full"
+      />
+    ),
+  },
+  {
+    accessorKey: "artistName",
+    header: "Artist Name",
     cell: ({ row }) => {
-      return <span>{row.original.fullName}</span>;
+      return <span>{row.original.artistName}</span>;
     },
     enableHiding: false,
+  },
+  {
+    accessorKey: "genre",
+    header: "Genre",
+    cell: ({ row }) => {
+      return <span>{row.original.genre}</span>;
+    },
   },
   {
     accessorKey: "status",

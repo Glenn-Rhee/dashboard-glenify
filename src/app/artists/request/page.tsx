@@ -30,6 +30,7 @@ export default function ArtistRequestPage() {
         <KPICard cards={dataCard} />
       </div>
       <TableRequestArtist
+        withPagination
         data={data as z.infer<typeof schemaTableReqArtist>[]}
       />
     </Container>
