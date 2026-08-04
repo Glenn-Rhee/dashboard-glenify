@@ -36,7 +36,17 @@ import { ColumnDef } from "@tanstack/react-table";
 
 export const schemaTableReqArtist = z.object({
   id: z.string(),
-  userName: z.string(),
+  artistName: z.string(),
+  fullName: z.string(),
+  avatarUrl: z.url(),
+  bio: z.string(),
+  genre: z.string(),
+  portfolioUrl: z.string().url().optional(),
+  identityNumber: z.string(),
+  documentUrl: z.string(),
+  phoneNumber: z.string(),
+  email: z.email(),
+  rejectionReason: z.string().optional(),
   requestDate: z.iso.datetime(),
   status: z.enum(["Pending", "Approved", "Rejected"]),
 });
@@ -81,7 +91,7 @@ function TableCellViewer({
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="gap-1">
-          <DrawerTitle>{item.userName}</DrawerTitle>
+          <DrawerTitle>{item.fullName}</DrawerTitle>
           <DrawerDescription>
             Showing total visitors for the last 6 months
           </DrawerDescription>
@@ -147,7 +157,7 @@ function TableCellViewer({
           <form className="flex flex-col gap-4">
             <div className="flex flex-col gap-3">
               <Label htmlFor="userName">User Name</Label>
-              <Input id="userName" defaultValue={item.userName} />
+              <Input id="userName" defaultValue={item.fullName} />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-3">
@@ -226,7 +236,7 @@ export const columns: ColumnDef<z.infer<typeof schemaTableReqArtist>>[] = [
     accessorKey: "userName",
     header: "User Name",
     cell: ({ row }) => {
-      return <span>{row.original.userName}</span>;
+      return <span>{row.original.fullName}</span>;
     },
     enableHiding: false,
   },
