@@ -31,7 +31,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import Link from "next/link";
 import { columns, schemaTableReqArtist } from "./table/columns-request-artist";
 import { Label } from "./ui/label";
 import {
@@ -53,9 +52,11 @@ import {
 export function TableRequestArtist({
   data: initialData,
   withPagination = false,
+  headerAction,
 }: {
   data: z.infer<typeof schemaTableReqArtist>[];
   withPagination?: boolean;
+  headerAction: React.JSX.Element;
 }) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -104,9 +105,7 @@ export function TableRequestArtist({
             Pending requests from users to become an artist
           </CardDescription>
         </div>
-        <CardAction className="text-primary font-semibold hover:underline cursor-pointer">
-          <Link href={"/artists/request"}>View All</Link>
-        </CardAction>
+        <CardAction className="">{headerAction}</CardAction>
       </CardHeader>
       <CardContent>
         <div className="overflow-hidden rounded-lg border">

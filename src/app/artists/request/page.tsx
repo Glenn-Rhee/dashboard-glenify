@@ -4,6 +4,8 @@ import { TableRequestArtist } from "@/components/TableRequestArtist";
 import data from "@/app/data.json";
 import z from "zod";
 import { schemaTableReqArtist } from "@/components/table/columns-request-artist";
+import { SearchIcon } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 const dataCard: CardKPI[] = [
   {
@@ -31,6 +33,18 @@ export default function ArtistRequestPage() {
       </div>
       <TableRequestArtist
         withPagination
+        headerAction={
+          <div className="flex w-full md:w-fit items-center gap-x-3">
+            <div className="relative flex items-center w-full">
+              <SearchIcon className="absolute left-2.5 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Search artist..."
+                className="pl-8 w-full md:w-64"
+              />
+            </div>
+          </div>
+        }
         data={data as z.infer<typeof schemaTableReqArtist>[]}
       />
     </Container>

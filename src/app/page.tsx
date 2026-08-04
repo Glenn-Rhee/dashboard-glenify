@@ -5,6 +5,7 @@ import z from "zod";
 import { schemaTableReqArtist } from "@/components/table/columns-request-artist";
 import Container from "@/components/Container";
 import KPICard, { CardKPI } from "@/components/KPICard";
+import Link from "next/link";
 
 const dataCard: CardKPI[] = [
   {
@@ -38,6 +39,14 @@ export default function Home() {
       </div>
       <div>
         <TableRequestArtist
+          headerAction={
+            <Link
+              href={"/artists/request"}
+              className="text-primary font-semibold hover:underline cursor-pointer"
+            >
+              View All
+            </Link>
+          }
           data={data as z.infer<typeof schemaTableReqArtist>[]}
         />
       </div>
