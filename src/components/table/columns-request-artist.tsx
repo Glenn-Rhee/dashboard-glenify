@@ -290,14 +290,19 @@ export const columns: ColumnDef<z.infer<typeof schemaTableReqArtist>>[] = [
   },
   {
     id: "actions",
-    cell: ({ row }) => (
-      <div className="flex items-center gap-x-3">
-        <Button size={"sm"}>Approved</Button>
-        <Button size={"sm"} variant={"destructive"}>
-          Rejected
-        </Button>
-        <TableCellViewer item={row.original} />
-      </div>
-    ),
+    cell: ({ row }) =>
+      row.original.status === "Pending" ? (
+        <div className="flex items-center justify-center gap-x-3">
+          <Button size={"sm"}>Approved</Button>
+          <Button size={"sm"} variant={"destructive"}>
+            Rejected
+          </Button>
+          <TableCellViewer item={row.original} />
+        </div>
+      ) : (
+        <div className="w-full flex items-center justify-center">
+          <TableCellViewer item={row.original} />
+        </div>
+      ),
   },
 ];
