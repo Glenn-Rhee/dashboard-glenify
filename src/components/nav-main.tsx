@@ -19,30 +19,38 @@ export function NavMain({
   }[];
 }) {
   const pathname = usePathname();
+
   return (
     <SidebarGroup className="mt-6">
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu className="gap-y-3">
-          {items.map((item) => (
-            <Link
-              key={item.title}
-              href={item.url}
-              className={cn(
-                "py-2 rounded-md hover:bg-primary hover:text-white transition-all duration-200",
-                {
-                  "bg-primary text-white": pathname === item.url,
-                },
-              )}
-            >
-              <SidebarMenuItem
-                className="flex items-center gap-x-3 px-2 text-sm"
+          {items.map((item) => {
+            const isActive =
+              item.url === "/"
+                ? pathname === "/"
+                : pathname === item.url || pathname.startsWith(item.url + "/");
+
+            return (
+              <Link
                 key={item.title}
+                href={item.url}
+                className={cn(
+                  "py-2 rounded-md hover:bg-primary hover:text-white transition-all duration-200",
+                  {
+                    "bg-primary text-white": isActive,
+                  },
+                )}
               >
-                {item.icon}
-                <span>{item.title}</span>
-              </SidebarMenuItem>
-            </Link>
-          ))}
+                <SidebarMenuItem
+                  className="flex items-center gap-x-3 px-2 text-sm"
+                  key={item.title}
+                >
+                  {item.icon}
+                  <span>{item.title}</span>
+                </SidebarMenuItem>
+              </Link>
+            );
+          })}
         </SidebarMenu>
       </SidebarGroupContent>
     </SidebarGroup>

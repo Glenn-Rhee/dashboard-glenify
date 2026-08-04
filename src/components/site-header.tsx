@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 export function SiteHeader() {
   const pathname = usePathname();
   const path = pathRegister.get(pathname);
+  console.log(pathRegister.keys().toArray());
   if (!path) return null;
 
   return (
@@ -18,7 +19,7 @@ export function SiteHeader() {
             orientation="vertical"
             className="mx-2 data-[orientation=vertical]:h-4"
           />
-          <h1 className="text-base font-medium">{path.title}</h1>
+          {path.title}
         </div>
 
         {path.action}

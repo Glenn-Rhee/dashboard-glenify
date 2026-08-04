@@ -1,23 +1,24 @@
+import PageHeader from "@/components/PageHeader";
 import { UserRoundPlus } from "lucide-react";
 import Link from "next/link";
 import { JSX } from "react/jsx-runtime";
 
 interface ValueRegister {
-  title: string;
+  title: JSX.Element;
   action: null | JSX.Element;
 }
 export const pathRegister: Map<string, ValueRegister> = new Map([
   [
     "/",
     {
-      title: "Dashboard",
+      title: <h1 className="text-base font-medium">Dashboard</h1>,
       action: null,
     },
   ],
   [
     "/artists",
     {
-      title: "Moderation Artists",
+      title: <h1 className="text-base font-medium">Moderation Artists</h1>,
       action: (
         <Link href={"/artists/request"} className="cursor-pointer">
           <UserRoundPlus className="size-5" />
@@ -28,49 +29,49 @@ export const pathRegister: Map<string, ValueRegister> = new Map([
   [
     "/artists/request",
     {
-      title: "Request Artist",
+      title: <PageHeader backTo="/artists" />,
       action: null,
     },
   ],
   [
     "/songs",
     {
-      title: "Moderation Songs",
+      title: <h1 className="text-base font-medium">Moderation Songs</h1>,
       action: null,
     },
   ],
   [
     "/albums",
     {
-      title: "Moderation Albums",
+      title: <h1 className="text-base font-medium">Moderation Albums</h1>,
       action: null,
     },
   ],
   [
     "/statistics",
     {
-      title: "Statistics",
+      title: <h1 className="text-base font-medium">Statistics</h1>,
       action: null,
     },
   ],
   [
     "/playlists",
     {
-      title: "Playlists",
+      title: <h1 className="text-base font-medium">Playlists</h1>,
       action: null,
     },
   ],
   [
     "/users",
     {
-      title: "Users",
+      title: <h1 className="text-base font-medium">Users</h1>,
       action: null,
     },
   ],
   [
     "/transactions",
     {
-      title: "Transactions",
+      title: <h1 className="text-base font-medium">Transactions</h1>,
       action: null,
     },
   ],
