@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 export function SiteHeader() {
   const pathname = usePathname();
   const path = pathRegister.get(pathname);
-  console.log(pathRegister.keys().toArray());
   if (!path) return null;
 
   return (
