@@ -144,7 +144,6 @@ export default function TableArtist({
                 table.getRowModel().rows.map((row) => (
                   <ContextMenuArtist key={row.original.id} item={row.original}>
                     <TableRow
-                      key={row.original.id}
                       data-state={row.getIsSelected() && "selected"}
                       className="relative group/row-artist hover:bg-primary/5 z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
                     >

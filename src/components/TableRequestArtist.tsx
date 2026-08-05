@@ -48,6 +48,7 @@ import {
   ChevronsLeftIcon,
   ChevronsRightIcon,
 } from "lucide-react";
+import ContextMenuReqArtist from "./contextmenu/context-menu-req-artist";
 
 export function TableRequestArtist({
   data: initialData,
@@ -131,20 +132,24 @@ export function TableRequestArtist({
             <TableBody className="**:data-[slot=table-cell]:first:w-8">
               {table.getRowModel().rows?.length ? (
                 table.getRowModel().rows.map((row) => (
-                  <TableRow
+                  <ContextMenuReqArtist
+                    item={row.original}
                     key={row.original.id}
-                    data-state={row.getIsSelected() && "selected"}
-                    className="relative z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"
                   >
-                    {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </TableCell>
-                    ))}
-                  </TableRow>
+                    <TableRow
+                      data-state={row.getIsSelected() && "selected"}
+                      className="relative z-0 data-[dragging=true]:z-10 hover:bg-primary/5 data-[dragging=true]:opacity-80"
+                    >
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  </ContextMenuReqArtist>
                 ))
               ) : (
                 <TableRow>
