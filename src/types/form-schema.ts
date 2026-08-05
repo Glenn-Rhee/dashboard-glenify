@@ -1,3 +1,7 @@
+import {
+  baseGenreArtistValue,
+  baseStatusReqArtistValue,
+} from "@/components/table/columns-request-artist";
 import z from "zod";
 
 export default class FormSchema {
@@ -79,4 +83,15 @@ export default class FormSchema {
         }
       }
     });
+
+  static readonly filterReqArtist = z.object({
+    genre: z.enum([...baseGenreArtistValue, "None"]).default("None"),
+    status: z.enum([...baseStatusReqArtistValue, "None"]).default("None"),
+    rangeDateReq: z
+      .object({
+        from: z.date({ error: "Please fill properly" }).optional(),
+        to: z.date({ error: "Please fill properly" }).optional(),
+      })
+      .optional(),
+  });
 }
