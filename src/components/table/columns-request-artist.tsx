@@ -28,26 +28,36 @@ import Link from "next/link";
 import { Textarea } from "../ui/textarea";
 import DropdownmenuRequestArtist from "../dropwdownmenu/dropdown-menu-req-artist";
 
+export const baseGenreArtistValue = [
+  "Pop",
+  "Hip-Hop",
+  "R&B",
+  "Rock",
+  "Electronic",
+  "Jazz",
+  "Folk",
+  "Classical",
+  "Reggae",
+  "Metal",
+  "Country",
+  "Other",
+] as const;
+export const genreArtist = z.enum(baseGenreArtistValue);
+
+export const baseStatusReqArtistValue = [
+  "Pending",
+  "Approved",
+  "Rejected",
+] as const;
+export const statusReqArtist = z.enum(baseStatusReqArtistValue);
+
 export const schemaTableReqArtist = z.object({
   id: z.string(),
   artistName: z.string(),
   fullName: z.string(),
   avatarUrl: z.url(),
   bio: z.string(),
-  genre: z.enum([
-    "Pop",
-    "Hip-Hop",
-    "R&B",
-    "Rock",
-    "Electronic",
-    "Jazz",
-    "Folk",
-    "Classical",
-    "Reggae",
-    "Metal",
-    "Country",
-    "Other",
-  ]),
+  genre: genreArtist,
   portfolioUrl: z.url().optional(),
   identityNumber: z.string(),
   documentUrl: z.string(),
@@ -55,7 +65,7 @@ export const schemaTableReqArtist = z.object({
   email: z.email(),
   rejectionReason: z.string().optional(),
   requestDate: z.iso.datetime(),
-  status: z.enum(["Pending", "Approved", "Rejected"]),
+  status: statusReqArtist,
 });
 
 export function ArtistRequestDetail({
