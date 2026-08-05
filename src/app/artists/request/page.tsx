@@ -29,7 +29,7 @@ export default function ArtistRequestPage() {
   return (
     <Container>
       <div className="mt-3">
-        <KPICard cards={dataCard} />
+        <KPICard className="@5xl/main:grid-cols-3" cards={dataCard} />
       </div>
       <TableRequestArtist
         withPagination

@@ -10,7 +10,6 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,8 +17,8 @@ import { Separator } from "@/components/ui/separator";
 import {
   ExternalLinkIcon,
   FileTextIcon,
-  InfoIcon,
   MailIcon,
+  MoreVertical,
   PhoneIcon,
 } from "lucide-react";
 import z from "zod";
@@ -27,6 +26,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import Link from "next/link";
 import { Textarea } from "../ui/textarea";
+import DropdownmenuRequestArtist from "../dropwdownmenu/dropdown-menu-req-artist";
 
 export const schemaTableReqArtist = z.object({
   id: z.string(),
@@ -45,10 +45,14 @@ export const schemaTableReqArtist = z.object({
   status: z.enum(["Pending", "Approved", "Rejected"]),
 });
 
-function TableCellViewer({
+export function ArtistRequestDetail({
   item,
+  open,
+  onOpenChange,
 }: {
   item: z.infer<typeof schemaTableReqArtist>;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }) {
   const isMobile = useIsMobile();
   function maskIdentityNumber(value: string) {
@@ -59,16 +63,11 @@ function TableCellViewer({
   }
 
   return (
-    <Drawer direction={isMobile ? "bottom" : "right"}>
-      <DrawerTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon-sm"
-          className="w-fit px-0 text-left text-foreground"
-        >
-          <InfoIcon className="size-4" />
-        </Button>
-      </DrawerTrigger>
+    <Drawer
+      open={open}
+      onOpenChange={onOpenChange}
+      direction={isMobile ? "bottom" : "right"}
+    >
       <DrawerContent>
         <DrawerHeader className="gap-1">
           <div className="flex items-center gap-3">
@@ -307,19 +306,25 @@ export const columns: ColumnDef<z.infer<typeof schemaTableReqArtist>>[] = [
   },
   {
     id: "actions",
-    cell: ({ row }) =>
-      row.original.status === "Pending" ? (
-        <div className="flex items-center justify-center gap-x-3">
-          <Button size={"sm"}>Approved</Button>
-          <Button size={"sm"} variant={"destructive"}>
-            Rejected
-          </Button>
-          <TableCellViewer item={row.original} />
-        </div>
-      ) : (
-        <div className="w-full flex items-center justify-center">
-          <TableCellViewer item={row.original} />
-        </div>
-      ),
+    cell: ({ row }) => (
+      <DropdownmenuRequestArtist item={row.original}>
+        <button>
+          <MoreVertical className="size-5" />
+        </button>
+      </DropdownmenuRequestArtist>
+    ),
+    // row.original.status === "Pending" ? (
+    //   <div className="flex items-center justify-center gap-x-3">
+    //     <Button size={"sm"}>Approved</Button>
+    //     <Button size={"sm"} variant={"destructive"}>
+    //       Rejected
+    //     </Button>
+    //     <TableCellViewer item={row.original} />
+    //   </div>
+    // ) : (
+    //   <div className="w-full flex items-center justify-center">
+    //     <TableCellViewer item={row.original} />
+    //   </div>
+    // ),
   },
 ];

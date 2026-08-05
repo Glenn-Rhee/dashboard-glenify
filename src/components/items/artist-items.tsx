@@ -13,7 +13,6 @@ interface Props {
 
 export default function ArtistItems(props: Props) {
   const { item, menu } = props;
-  console.log(item);
   const [openDetail, setOpenDetail] = useState<boolean>(false);
 
   return (

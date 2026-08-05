@@ -14,10 +14,11 @@ export interface CardKPI {
 
 interface Props {
   cards: CardKPI[];
+  className?: string;
 }
 
 export default function KPICard(props: Props) {
-  const { cards } = props;
+  const { cards, className } = props;
   const getUnit = (type: CardKPI["convertTo"]) => {
     return type === "currency" ? "$" : type === "percent" ? "%" : "";
   };
@@ -33,10 +34,8 @@ export default function KPICard(props: Props) {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs @xl/main:grid-cols-2 dark:*:data-[slot=card]:bg-card",
-        cards.length > 4
-          ? "@5xl/main:grid-cols-4"
-          : `@5xl/main:grid-cols-${cards.length}`,
+        "grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t @5xl/main:grid-cols-4 *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs @xl/main:grid-cols-2 dark:*:data-[slot=card]:bg-card",
+        className,
       )}
     >
       {cards.map((card) => (

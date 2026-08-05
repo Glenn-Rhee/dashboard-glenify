@@ -160,7 +160,7 @@ export function TableRequestArtist({
           </Table>
         </div>
         {withPagination ? (
-          <div className="flex items-center justify-between px-4">
+          <div className="flex items-center justify-between px-4 mt-5">
             <div className="hidden flex-1 text-sm text-muted-foreground lg:flex">
               {table.getFilteredSelectedRowModel().rows.length} of{" "}
               {table.getFilteredRowModel().rows.length} row(s) selected.
