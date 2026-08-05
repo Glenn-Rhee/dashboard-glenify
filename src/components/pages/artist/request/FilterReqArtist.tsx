@@ -1,14 +1,22 @@
 "use client";
+import { DatePicker } from "@/components/DatePicker";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import {
+  Field,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import {
   Popover,
@@ -59,6 +67,17 @@ export default function FilterReqArtist() {
       }),
     );
     if (Object.keys(activeFilters).length === 0) return;
+    const valueOtherGenre = otherGenreValue.trim();
+    if (
+      activeFilters["genre"] &&
+      activeFilters["genre"] === "Other" &&
+      valueOtherGenre === ""
+    ) {
+      form.setError("genre", { message: "Please fill your other genre" });
+      return;
+    }
+
+    // Do something here..
   };
 
   return (
@@ -146,12 +165,16 @@ export default function FilterReqArtist() {
                     </Popover>
                     {showOtherGenre ? (
                       <Input
+                        aria-invalid={fieldState.invalid}
                         value={otherGenreValue}
                         onChange={(e) => setOtherGenreValue(e.target.value)}
                         placeholder="Fill your other genre"
                         inputMode="text"
                       />
                     ) : null}
+                    {fieldState.error && (
+                      <FieldError errors={[fieldState.error]} />
+                    )}
                   </Field>
                 )}
               />
@@ -209,7 +232,42 @@ export default function FilterReqArtist() {
                 )}
               />
             </div>
+            <Controller
+              control={form.control}
+              name="rangeDateReq"
+              render={({ field, fieldState }) => {
+                const fromError = form.formState.errors.rangeDateReq?.from;
+                const toError = form.formState.errors.rangeDateReq?.to;
+                const rootError = form.formState.errors.rangeDateReq?.root;
+
+                return (
+                  <Field data-invalid={fieldState.invalid}>
+                    <FieldLabel htmlFor="rangeDateReq">Requested At</FieldLabel>
+                    <DatePicker
+                      dateRange={{
+                        from: field.value?.from,
+                        to: field.value?.to,
+                      }}
+                      onDateChange={field.onChange}
+                    />
+                    {(fromError || toError || rootError) && (
+                      <FieldError
+                        errors={[fromError, toError, rootError].filter(Boolean)}
+                      />
+                    )}
+                  </Field>
+                );
+              }}
+            />
           </FieldGroup>
+          <DialogFooter className="mt-8">
+            <DialogClose asChild>
+              <Button variant="outline">Cancel</Button>
+            </DialogClose>
+            <Button onClick={form.handleSubmit(handleSubmit)} type="submit">
+              Apply Filter
+            </Button>
+          </DialogFooter>
         </form>
       </DialogContent>
     </Dialog>

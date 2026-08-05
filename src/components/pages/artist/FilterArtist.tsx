@@ -490,7 +490,7 @@ export default function FilterArtist() {
                   <DatePicker
                     dateRange={{
                       from: field.value?.from,
-                      to: field.value?.from,
+                      to: field.value?.to,
                     }}
                     onDateChange={field.onChange}
                   />

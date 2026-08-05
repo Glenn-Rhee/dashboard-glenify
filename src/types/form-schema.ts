@@ -92,6 +92,18 @@ export default class FormSchema {
         from: z.date({ error: "Please fill properly" }).optional(),
         to: z.date({ error: "Please fill properly" }).optional(),
       })
+      .refine((data) => !data.from || data.from <= new Date(), {
+        message: "Start date cannot be in the future",
+        path: ["from"],
+      })
+      .refine((data) => !data.to || data.to <= new Date(), {
+        message: "End date cannot be in the future",
+        path: ["to"],
+      })
+      .refine((data) => !data.from || !data.to || data.to >= data.from, {
+        message: "End date cannot be before start date",
+        path: ["to"],
+      })
       .optional(),
   });
 }
