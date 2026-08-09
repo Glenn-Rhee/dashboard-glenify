@@ -1,5 +1,4 @@
 import BarchartArtist from "@/components/BarchartArtist";
-import KPICard, { CardKPI } from "@/components/KPICard";
 import PieChart from "@/components/PieChart";
 import { Card } from "@/components/ui/card";
 import { ChartConfig } from "@/components/ui/chart";
@@ -106,28 +105,6 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-const dataCard: CardKPI[] = [
-  {
-    title: "Total Artist",
-    value: 1200,
-    convertTo: "number",
-  },
-  {
-    title: "Verified Artist",
-    value: 800,
-    convertTo: "number",
-  },
-  {
-    title: "Avg Streams",
-    value: 45678,
-    convertTo: "number",
-  },
-  {
-    title: "New This Month",
-    value: 450,
-    convertTo: "number",
-  },
-];
 
 const barChartData = [
   {
@@ -167,7 +144,6 @@ const pieChartData = [
 export default function ArtistVisualization() {
   return (
     <div className="mt-3">
-      <KPICard cards={dataCard} />
       <Card className="@container/card mt-6">
         <LineChart
           title="Artist Growth"
