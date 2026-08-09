@@ -42,6 +42,7 @@ export const baseGenreArtistValue = [
   "Country",
   "Other",
 ] as const;
+export const genreSong = z.enum(baseGenreArtistValue)
 export const genreArtist = z.enum(baseGenreArtistValue);
 
 export const baseStatusReqArtistValue = [
