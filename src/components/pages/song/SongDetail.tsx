@@ -275,7 +275,7 @@ export default function SongDetail({
             {!isBanned && (
               <Button
                 variant="outline"
-                className="flex-1"
+                className="flex-1 text-destructive"
                 disabled={isSuspended}
               >
                 <Clock3Icon className="h-4 w-4" />
