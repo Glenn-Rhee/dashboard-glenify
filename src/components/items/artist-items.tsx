@@ -31,12 +31,24 @@ export default function ArtistItems(props: Props) {
       >
         <InfoIcon className="size-5" /> View Detail
       </menu.Item>
-      <menu.Item>
-        <Clock3Icon className="size-5" /> Suspend
-      </menu.Item>
-      <menu.Item variant="destructive">
-        <Ban className="size-5" /> Ban
-      </menu.Item>
+      {item.statusAccount === "Suspend" ? (
+        <menu.Item disabled className="text-primary">
+          <Clock3Icon className="size-5" /> Suspended
+        </menu.Item>
+      ) : item.statusAccount === "Banned" ? (
+        <menu.Item disabled className="text-destructive" variant="destructive">
+          <Ban className="size-5" /> Banned
+        </menu.Item>
+      ) : (
+        <>
+          <menu.Item>
+            <Clock3Icon className="size-5" /> Suspend
+          </menu.Item>
+          <menu.Item variant="destructive">
+            <Ban className="size-5" /> Ban
+          </menu.Item>
+        </>
+      )}
     </>
   );
 }
