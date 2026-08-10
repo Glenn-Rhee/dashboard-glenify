@@ -71,6 +71,15 @@ export function ArtistDetail({
 }) {
   const isMobile = useIsMobile();
 
+  const isSuspended = item.statusAccount === "Suspend";
+  const isBanned = item.statusAccount === "Banned";
+  const isRestricted = isSuspended || isBanned;
+
+  // Asumsi field opsional; tambahkan `statusReason` di schemaTableSong jika belum ada
+  const statusReason =
+    (item as z.infer<typeof schemaTableArtist> & { statusReason?: string })
+      .statusReason ?? "No reason provided.";
+
   return (
     <Drawer
       open={open}
@@ -220,18 +229,44 @@ export function ArtistDetail({
               </div>
             </div>
           </div>
+
+          {isRestricted && (
+            <div className="flex flex-col gap-3">
+              <Label htmlFor="statusReason">
+                {isBanned ? "Ban Reason" : "Suspend Reason"}
+              </Label>
+              <Textarea
+                id="statusReason"
+                defaultValue={statusReason}
+                readOnly
+                rows={3}
+              />
+            </div>
+          )}
         </div>
 
         <DrawerFooter>
           <div className="flex gap-2">
-            <Button variant="outline" className="flex-1">
-              <Clock3Icon className="h-4 w-4" />
-              Suspend
-            </Button>
-            <Button variant="destructive" className="flex-1">
-              <Ban className="h-4 w-4" />
-              Ban
-            </Button>
+            {!isBanned && (
+              <Button
+                variant="outline"
+                className="flex-1"
+                disabled={isSuspended}
+              >
+                <Clock3Icon className="h-4 w-4" />
+                {isSuspended ? "Suspended" : "Suspend"}
+              </Button>
+            )}
+            {!isSuspended && (
+              <Button
+                variant="destructive"
+                className="flex-1"
+                disabled={isBanned}
+              >
+                <Ban className="h-4 w-4" />
+                {isBanned ? "Banned" : "Ban"}
+              </Button>
+            )}
           </div>
           <DrawerClose asChild>
             <Button>Close</Button>
