@@ -24,12 +24,32 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ChevronLeftIcon, ChevronRightIcon, ChevronsLeftIcon, ChevronsRightIcon, SearchIcon } from "lucide-react";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+  SearchIcon,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import ContextmenuSong from "@/components/contextmenu/context-menu-song";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
 const dataKPI: CardKPI[] = [
@@ -94,7 +114,7 @@ export default function TableSong() {
 
   return (
     <>
-      <KPICard cards={dataKPI} />
+      <KPICard cards={dataKPI} className="mt-6" />
       <Card className="@container/card mt-3">
         <CardHeader className="md:items-center flex-col gap-y-3 md:flex-row pb-0 justify-between flex">
           <div className="flex flex-col gap-1">
@@ -138,10 +158,7 @@ export default function TableSong() {
               <TableBody className="**:data-[slot=table-cell]:first:w-8">
                 {table.getRowModel().rows?.length ? (
                   table.getRowModel().rows.map((row) => (
-                    <ContextmenuSong
-                      key={row.original.id}
-                      item={row.original}
-                    >
+                    <ContextmenuSong key={row.original.id} item={row.original}>
                       <TableRow
                         data-state={row.getIsSelected() && "selected"}
                         className="relative group/row-artist hover:bg-primary/5 z-0 data-[dragging=true]:z-10 data-[dragging=true]:opacity-80"

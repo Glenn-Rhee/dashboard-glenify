@@ -3,6 +3,7 @@ import { ItemsOverlay } from "./types";
 import { schemaTableSong } from "../table/columns-song";
 import { useState } from "react";
 import { Ban, Clock3Icon, InfoIcon } from "lucide-react";
+import SongDetail from "../pages/song/SongDetail";
 
 interface Props {
   item: z.infer<typeof schemaTableSong>;
@@ -15,6 +16,7 @@ export default function SongItems(props: Props) {
 
   return (
     <>
+      <SongDetail item={item} onOpenChange={setOpenDetail} open={openDetail} />
       <menu.Item
         onClick={(e) => {
           e.stopPropagation();
