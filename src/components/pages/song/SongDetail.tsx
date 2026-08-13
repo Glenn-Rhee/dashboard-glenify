@@ -28,6 +28,7 @@ import { Ban, Clock3Icon } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import z from "zod";
+import AudioPlayer from "@/components/AudioPlayer";
 
 const chartConfig = {
   totalStreams: {
@@ -218,19 +219,8 @@ export default function SongDetail({
                 />
               )}
             </div>
-
-            <div className="flex flex-col gap-3">
-              <Label>Audio Preview</Label>
-              <audio
-                controls
-                controlsList="nodownload"
-                onContextMenu={(e) => e.preventDefault()}
-                src={item.audioUrl}
-                className="w-full h-10"
-              >
-                Your browser does not support the audio element.
-              </audio>
-            </div>
+            
+            <AudioPlayer audioUrl={item.audioUrl} />
 
             <div className="flex flex-col gap-3">
               <Label>Status</Label>
