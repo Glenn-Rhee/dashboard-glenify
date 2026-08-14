@@ -1,5 +1,5 @@
 export default function FilterSong() {
     return (
-        <h1>This is filter song</h1>
+        <h1>This is filter</h1>
     )
 };
