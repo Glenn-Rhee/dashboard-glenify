@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Glenify-Dashboard",
-  description: "Glenify Dashboard is a website for manage ",
+  description: "Glenify Dashboard is a website for manage",
 };
 
 export default function RootLayout({
